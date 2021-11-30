@@ -3,17 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
     <link href="./styles.css" rel="stylesheet">
+	
     <title>Hello World!</title>
   </head>
   <body>
     <h1>Hello World!</h1>
+	<p>Current theme source: <strong id="theme-source">System</strong></p>
+
+	<button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <button id="reset-to-system">Reset to System Theme</button>
+	
     We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
+	<iframe id="child" src="http://192.168.12.56:8080/#/form/creator-platform-form" allow-scripts></iframe>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
+	<script>
+		// if(child.document.readyState=="complete"){
+			
+        //     child.window.creator = JSON.stringify({"codeSupport":{"variables":{"local":[{"label":"iRet","value":"iRet"},{"label":"jsonRet","value":"jsonRet"},{"label":"objDatabase","value":"objDatabase"}],"flow":[{"label":"hhh","value":"hhh"},{"label":"g_temp","value":"g_temp"},{"label":"g_temp1","value":"g_temp1"},{"label":"g_temp2","value":"g_temp2"},{"label":"g_temp3","value":"g_temp3"}],"system":[{"label":"流程块的输入","value":"$BlockInput"},{"label":"上一条命令的结果","value":"$PrevResult"},{"label":"UiBot的安装路径","value":"$UB.InstallPath"},{"label":"UiBot的版本","value":"$UB.Version"},{"label":"当前流程的工作路径","value":"$Flow.WorkPath"},{"label":"当前流程已运行的时间（毫秒）","value":"$Flow.ElaspedTime"},{"label":"当前流程块的描述信息","value":"$Block.Description"}]}},"modal":{"token":"0457DC698C0DCA5955075602BA85FE0EC5A623CF39224CFBF6B50B027D3B9A39","state":{}}})
+        // }
+	</script>
   </body>
 </html>
